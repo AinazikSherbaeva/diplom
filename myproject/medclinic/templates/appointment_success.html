@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Запись успешно отправлена{% endblock %}
+
+{% block content %}
+  <section id="appointment-success" class="appointment-success section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Запись успешно отправлена</h2>
+        <p>Ваш запрос на встречу успешно отправлен. Спасибо за вашу запись. Мы свяжемся с вами в ближайшее время для подтверждения вашей встречи.</p>
+      </div>
+      <div class="text-center">
+        <a href="{% url 'index' %}" class="btn btn-primary">Вернуться на главную</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

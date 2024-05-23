@@ -1,0 +1,484 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Medline медицинская клиника{% endblock %}
+
+{% block content %}
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="align-items-center d-none d-md-flex">
+        <i class="bi bi-clock"></i> пн - пт: 08:30 - 18:30 сб: 08:30 - 15:30
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="bi bi-phone"></i> Звонить: +996 500 700 800
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="#hero">Домой</a></li>
+          <li><a class="nav-link scrollto" href="#about">О клинике</a></li>
+          <li><a class="nav-link scrollto" href="#services">Сервис</a></li>
+          <li><a class="nav-link scrollto" href="#departments">Отделы</a></li>
+          <li><a class="nav-link scrollto" href="#doctors">Докторы</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'login' %}">Вход</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'register' %}">Регистрация</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-1.jpg' %})">
+          <div class="container">
+            <h2>Добро пожаловать в медицинскую клинику <span>Medline</span></h2>
+            <p>Мы предлагаем широкий спектр медицинских услуг, используя новейшие технологии и современные методы диагностики и лечения. Наша команда состоит из высококвалифицированных врачей и медсестер, которые обеспечат вам заботу и внимание на каждом этапе вашего лечения.</p>
+            <a href="#about" class="btn-get-started scrollto">Читать далее</a>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-2.jpg' %})"></div>
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-3.jpg' %})"></div>
+      </div>
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4 class="title"><a href="">Кардио</a></h4>
+              <p class="description">Одним из наших ключевых преимуществ является высококлассное кардиологическое отделение. Мы предлагаем комплексные услуги по диагностике и лечению сердечно-сосудистых заболеваний, используя новейшие технологии и методы.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4 class="title"><a href="">Бесплатные лекарства</a></h4>
+              <p class="description">Одним из наших ключевых преимуществ является предоставление бесплатных лекарств для наших пациентов. Мы стремимся сделать качественное лечение доступным для всех, поэтому обеспечиваем необходимыми медикаментами без дополнительной платы.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="fas fa-thermometer"></i></div>
+              <h4 class="title"><a href="">Индивидуальный подход к каждому пациенту</a></h4>
+              <p class="description">Мы внимательно относимся к вашим потребностям и разрабатываем персонализированные планы лечения для каждого пациента. Наша команда врачей и медицинских специалистов тщательно анализирует ваше здоровье, учитывая все особенности вашего организма.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="fas fa-dna"></i></div>
+              <h4 class="title"><a href="">Современное оборудование</a></h4>
+              <p class="description">Наша клиника оснащена передовыми медицинскими технологиями, что позволяет проводить точную диагностику и эффективное лечение. Мы постоянно обновляем наше оборудование, чтобы соответствовать самым высоким стандартам медицинской практики.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= CTA Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+        <div class="text-center">
+          <h3>Нужна помошь?</h3>
+          <a class="cta-btn scrollto" href="#appointment">назначить на встречу</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>О клинике</h2>
+          <p>В нашей клинике вы найдете специализированные отделения, включая терапию, хирургию, кардиологию, педиатрию и многие другие. Мы гордимся тем, что можем предложить индивидуальный подход к каждому пациенту, создавая комфортные условия для быстрого и эффективного восстановления здоровья.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Наши преимущества:</h3>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Современное оборудование.</li>
+              <li><i class="bi bi-check-circle"></i> Квалифицированный и опытный персонал.</li>
+              <li><i class="bi bi-check-circle"></i> Удобное расположение и комфортные условия.</li>
+              <li><i class="bi bi-check-circle"></i> Индивидуальный подход к каждому пациенту.</li>
+            </ul>
+            <h3>Какие заболевания лечит наша клиника:</h3>
+            <p>В нашей клинике вы можете получить квалифицированную помощь в лечении следующих заболеваний:</p>
+            <ol>
+              <li>Сердечно-сосудистые заболевания: Гипертония, ишемическая болезнь сердца, сердечная недостаточность, аритмии и другие.</li>
+              <li>Заболевания дыхательной системы: Бронхит, астма, пневмония, хроническая обструктивная болезнь легких (ХОБЛ) и другие.</li>
+              <li>Эндокринные заболевания: Сахарный диабет, заболевания щитовидной железы, метаболические нарушения и другие.</li>
+              <li>Заболевания желудочно-кишечного тракта: Гастрит, язвенная болезнь, синдром раздраженного кишечника, гепатит и другие.</li>
+              <li>Неврологические заболевания: Мигрень, эпилепсия, инсульт, рассеянный склероз и другие.</li>
+              <li>Опорно-двигательные заболевания: Артрит, остеопороз, межпозвоночные грыжи, спортивные травмы и другие.</li>
+              <li>Дерматологические заболевания: Экзема, псориаз, акне, аллергические дерматиты и другие.</li>
+              <li>Педиатрические заболевания: ОРВИ, аллергии, детские инфекционные заболевания, нарушения развития и другие.</li>
+              <li>Гинекологические заболевания: Эндометриоз, миома матки, менструальные нарушения, инфекции и другие.</li>
+              <li>Урологические заболевания: Простатит, цистит, мочекаменная болезнь, эректильная дисфункция и другие.</li>
+            </ol>
+            <p>Наши врачи используют современные методы диагностики и лечения, обеспечивая индивидуальный подход к каждому пациенту. Мы стремимся создать комфортные условия для выздоровления и поддержания вашего здоровья. Запишитесь на консультацию и получите профессиональную медицинскую помощь в нашей клинике.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+        <div class="row no-gutters">
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-user-md"></i>
+              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Более квалифицированных докторов</strong></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="far fa-hospital"></i>
+              <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>В клинике имеются более 26 отделов</strong></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-flask"></i>
+              <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Более 14 исследовательских лабораторий</strong></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>150 наград и достижений</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services services">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Сервисы</h2>
+          <p>Наша клиника предлагает широкий спектр медицинских сервисов, обеспечивая комплексное и качественное обслуживание для наших пациентов. Мы стремимся создать комфортные условия и предоставить максимальное удобство на каждом этапе вашего лечения..</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-pills"></i></div>
+            <h4 class="title"><a href="">Dolor Sitema</a></h4>
+            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-hospital-user"></i></div>
+            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-dna"></i></div>
+            <h4 class="title"><a href="">Magni Dolores</a></h4>
+            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-wheelchair"></i></div>
+            <h4 class="title"><a href="">Nemo Enim</a></h4>
+            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-notes-medical"></i></div>
+            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Appointment Section ======= -->
+    <section id="appointment" class="appointment section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>назначить на встречу</h2>
+      </div>
+      <form action="{% url 'index' %}" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="my-3">
+          <div class="sent-message">{% for message in messages %}{% if message.tags == 'success' %}{{ message }}{% endif %}{% endfor %}</div>
+        </div>
+        <div class="text-center"><button type="submit">записаться на встречу</button></div>
+      </form>
+    </div>
+  </section>
+    <!-- ======= Departments Section ======= -->
+    <section id="departments" class="departments">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Отделения</h2>
+          <p>Наша клиника предлагает разнообразные специализированные отделения, где каждое представленное направление обеспечивает высококачественную медицинскую помощь. Мы гордимся нашей специализацией и стремимся удовлетворить потребности каждого пациента.</p>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                  <h4>Кардиология</h4>
+                  <p>Обследование и лечение сердечно-сосудистых заболеваний под руководством опытных кардиологов.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                  <h4>Неврология</h4>
+                  <p>Диагностика и терапия неврологических расстройств, включая мигрени, эпилепсию и инсульты.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                  <h4>Онкология</h4>
+                  <p>Интегрированный подход к лечению рака, включая химиотерапию, лучевую терапию и хирургические вмешательства.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                  <h4>Педиатрия</h4>
+                  <p>Специализированная медицинская помощь для детей всех возрастов, включая профилактические осмотры и лечение детских заболеваний.</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-8">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <h3>Кардиология</h3>
+                <p class="fst-italic">В отделении кардиологии нашей клиники вы можете получить доступ к широкому спектру услуг.</p>
+                <img src="{% static 'assets/img/departments-1.jpg' %}" alt="" class="img-fluid">
+                <p>Диагностика: Использование современных методов, таких как ЭКГ, эхокардиография, нагрузочные тесты и мониторинг Холтера, для точного выявления состояния вашего сердечно-сосудистого здоровья.</p>
+                <p>Лечение: Разработка индивидуальных терапевтических планов в зависимости от диагностированных заболеваний, включая гипертонию, ишемическую болезнь сердца, аритмии и другие сердечные расстройства.</p>
+                <p>Профилактика: Проведение профилактических осмотров, консультаций по здоровому образу жизни и рекомендации по укреплению сердечно-сосудистой системы.</p>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <h3>Неврология</h3>
+                <p class="fst-italic">В отделении неврологии нашей клиники мы предлагаем:</p>
+                <img src="{% static 'assets/img/departments-2.jpg' %}" alt="" class="img-fluid">
+                <p>Диагностика: Применение современных неврологических тестов и обследований, таких как электроэнцефалография (ЭЭГ), магнитно-резонансная томография (МРТ) и компьютерная томография (КТ), для точного определения диагноза и планирования лечения.</p>
+                <p>Терапия: Разработка индивидуальных терапевтических стратегий для каждого пациента, включая назначение лекарственных препаратов, физиотерапии и реабилитационных мероприятий.</p>
+                <p>Управление хроническими состояниями: Специализированное лечение для пациентов с хроническими неврологическими заболеваниями, направленное на улучшение качества жизни и предотвращение осложнений.</p>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <h3>Онкология</h3>
+                <p class="fst-italic">В нашем отделении онкологии вы получите доступ к:</p>
+                <img src="{% static 'assets/img/departments-3.jpg' %}" alt="" class="img-fluid">
+                <p>Диагностика и стадирование: Использование современных методов, таких как биопсия, компьютерная томография (КТ), магнитно-резонансная томография (МРТ) и позитронно-эмиссионная томография (ПЭТ-КТ), для точного определения распространенности заболевания.</p>
+                <p>Мультидисциплинарное лечение: Разработка индивидуального лечебного плана, включая химиотерапию, лучевую терапию, хирургические вмешательства и иммунотерапию, при необходимости.</p>
+                <p>Поддержка и реабилитация: Психологическая поддержка, реабилитационные программы и уход после лечения для обеспечения вашего физического и эмоционального благополучия.</p>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <h3>Педиатрия</h3>
+                <p class="fst-italic">В нашем отделении педиатрии вы найдете:</p>
+                <img src="{% static 'assets/img/departments-4.jpg' %}" alt="" class="img-fluid">
+                <p>Профилактические осмотры и вакцинации: Регулярные осмотры для контроля физического и психического развития детей, а также проведение вакцинационных программ по национальному календарю.</p>
+                <p>Лечение детских заболеваний: Диагностика и лечение широкого спектра заболеваний, включая инфекционные, дыхательные, желудочно-кишечные, аллергические и другие состояния.</p>
+                <p>Современные методы диагностики: Использование современного оборудования для точной диагностики и назначения эффективного лечения.</p>
+                <p>Развитие и консультации: Поддержка родителей в вопросах о здоровье и развитии детей, консультирование по вопросам питания и образа жизни.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Doctors Section ======= -->
+    <section id="doctors" class="doctors section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Докторы</h2>
+            <p>Наши врачи представлены различными специализациями...</p>
+        </div>
+        <div class="row">
+      {% for doctor in doctors %}
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+                <img src="{{ doctor.photo.url }}" class="img-fluid" alt="">
+            </div>
+            <div class="member-info">
+                <h4>{{ doctor.name }}</h4>
+                <span>{{ doctor.position }}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+      </div>
+    </section>
+
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Галерея</h2>
+          <p>Погружение в атмосферу нашей клиники через галерею фотографий поможет вам ощутить комфорт и профессионализм, которыми мы гордимся. В нашей галерее вы найдете изображения современных медицинских помещений, оборудования и нашей дружелюбной команды врачей.</p>
+        </div>
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-1.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-2.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-3.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-3.jpg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-4.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-4.jpg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-5.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-5.jpg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-6.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-6.jpg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-7.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-7.jpg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-8.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-8.jpg' %}" class="img-fluid" alt=""></a></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Контакты</h2>
+          <p>Свяжитесь с нами для записи на прием или получения дополнительной информации о наших услугах и предложениях. Мы всегда рады помочь вам и ответить на ваши вопросы. Заполните форму ниже или используйте указанные контакты для связи с нами.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-box mb-4">
+              <i class="bi би-гео-alt"></i>
+              <h3>Наш адрес</h3>
+              <p>Киргизия, г. Ош, ул. Кокумбия 103</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-box mb-4">
+              <i class="bi би-клок"></i>
+              <h3>Наши часы работы</h3>
+              <p>пн - пт: 08:30 - 18:30<br>сб: 08:30 - 15:30</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="info-box mb-4">
+              <i class="bi би-фоне"></i>
+              <h3>Позвоните нам</h3>
+              <p>+996 500 700 800<br>+996 312 700 800</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h3>Medline</h3>
+          <p>
+            Ош, Кыргызстан <br>
+            ул Ленина 231а<br>
+            <strong>Телефон:</strong> +996 500 700 800<br>
+            <strong>Почта:</strong> info@example.com<br>
+          </p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Полезные ссылки</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Домой</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">О клинике</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Сервисы</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container d-md-flex py-4">
+
+    <div class="me-md-auto text-center text-md-start">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Medline</span></strong>. Все права защищены
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </div>
+</footer><!-- End Footer -->
+{% endblock %}
+
+{% block extra_js %}
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form.php-email-form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();  // Prevent the default form submission
+            const formData = new FormData(form);
+            fetch('{% url "index" %}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.querySelector('.sent-message').style.display = 'block';
+                } else {
+                    document.querySelector('.error-message').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                document.querySelector('.error-message').style.display = 'block';
+            });
+        });
+    });
+  </script>
+{% endblock %}
+
